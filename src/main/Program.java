@@ -54,16 +54,7 @@ public class Program {
                     System.out.println("Please talk to Librarian. Thank you.");
                 }
             } else if (i1 == 4) {
-                System.out.println(createMovie("Rocky", "John G. Avildsen", "10"));
-                System.out.println(createMovie("Rocky II", "John G. Avildsen", "9"));
-                System.out.println(createMovie("Rocky III", "John G. Avildsen", "8"));
-                System.out.println(createMovie("Rocky IV", "John G. Avildsen", "7"));
-                System.out.println(createMovie("Rocky V", "John G. Avildsen", "8"));
-                System.out.println(createMovie("Drainage", "Francisco Trindade", "N/A"));
-                System.out.println(createMovie("The Shawshank Redemption", "Frank Darabont", "10"));
-                System.out.println(createMovie("The Godfather", "Francis Ford Coppola", "7"));
-                System.out.println(createMovie("Inception", "Frank Darabont", "10"));
-                System.out.println(createMovie("Pulp Fiction", "Quentin Tarantino", "6"));
+                printMovieList();
             } else if (i1 == 5) {
                 clearLogin();
                 System.out.println("Enter your library number");
@@ -89,10 +80,22 @@ public class Program {
                 System.out.println("Quitting...");
                 break;
             } else {
-                System.out.println("\n");
                 System.out.println("Enter a valid integer!!");
             }
         }
+    }
+
+    private static void printMovieList() {
+        System.out.println(createMovie("Rocky", "John G. Avildsen", "10"));
+        System.out.println(createMovie("Rocky II", "John G. Avildsen", "9"));
+        System.out.println(createMovie("Rocky III", "John G. Avildsen", "8"));
+        System.out.println(createMovie("Rocky IV", "John G. Avildsen", "7"));
+        System.out.println(createMovie("Rocky V", "John G. Avildsen", "8"));
+        System.out.println(createMovie("Drainage", "Francisco Trindade", "N/A"));
+        System.out.println(createMovie("The Shawshank Redemption", "Frank Darabont", "10"));
+        System.out.println(createMovie("The Godfather", "Francis Ford Coppola", "7"));
+        System.out.println(createMovie("Inception", "Frank Darabont", "10"));
+        System.out.println(createMovie("Pulp Fiction", "Quentin Tarantino", "6"));
     }
 
     private static void printBookList() {
