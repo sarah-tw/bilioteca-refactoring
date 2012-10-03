@@ -104,7 +104,7 @@ public class ProgramTest {
     @Test
     public void successfull_log_in() {
         System.setOut(new PrintStream(outputStream));
-        System.setIn(stubInputStream().toReturn(LOGIN).then("111-1111").then("bhaisahab")
+        System.setIn(stubInputStream().toReturn(LOGIN).then("111-1111").then("bilioteca")
                 .then(TALK_TO_LIBRARIAN).then(EXIT_CODE).atSomePoint());
 
         launchApp();
@@ -116,7 +116,7 @@ public class ProgramTest {
     @Test
     public void unsuccessful_login_because_of_username() {
         System.setOut(new PrintStream(outputStream));
-        System.setIn(stubInputStream().toReturn(LOGIN).then("999999-1111").then("bhaisahab")
+        System.setIn(stubInputStream().toReturn(LOGIN).then("999999-1111").then("bilioteca")
                 .then(TALK_TO_LIBRARIAN).then(EXIT_CODE).atSomePoint());
 
         launchApp();

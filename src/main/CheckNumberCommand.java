@@ -10,11 +10,8 @@ public class CheckNumberCommand implements Command{
 
     public void excute() {
         if (loggedIn()) {
-            System.out.println("\n");
             System.out.println("Your library number is " + savedLibraryNumber);
         } else {
-
-            System.out.println("\n");
             System.out.println("Please talk to Librarian. Thank you.");
         }
     }

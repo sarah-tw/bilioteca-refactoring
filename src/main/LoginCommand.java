@@ -17,12 +17,15 @@ public class LoginCommand implements Command {
                     if (validPassword(password)) {
                         CheckNumberCommand.loggedIn = true;
                         CheckNumberCommand.savedLibraryNumber = libraryNumber;
+                        System.out.println("Login Successfully");
                     } else {
                         System.out.println("Password Wrong!");
                     }
                 } catch (Exception e) {
                     System.out.println("Something is wrong!");
                 }
+            }else {
+                System.out.println("Wrong library number!");
             }
         } catch (Exception e) {
             System.out.println("Something is wrong!");
@@ -39,6 +42,6 @@ public class LoginCommand implements Command {
     }
 
     private static boolean validPassword(String password) {
-        return "bhaisahab".equals(password);
+        return "bilioteca".equals(password);
     }
 }
