@@ -9,7 +9,6 @@ public class Program {
         boolean isRun = true;
         while (isRun) {
             printMenuList();
-
             InputStreamReader inputStream = new InputStreamReader(System.in);
             BufferedReader reader = new BufferedReader(inputStream);
             int i1 = 0;

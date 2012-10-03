@@ -17,13 +17,15 @@ public class LoginCommand implements Command {
                     if (validPassword(password)) {
                         CheckNumberCommand.loggedIn = true;
                         CheckNumberCommand.savedLibraryNumber = libraryNumber;
+                    } else {
+                        System.out.println("Password Wrong!");
                     }
                 } catch (Exception e) {
-
+                    System.out.println("Something is wrong!");
                 }
             }
         } catch (Exception e) {
-
+            System.out.println("Something is wrong!");
         }
     }
 
