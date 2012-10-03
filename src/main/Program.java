@@ -4,8 +4,6 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 
 public class Program {
-    private static boolean loggedIn = false;
-    private static String savedLibraryNumber = "";
 
     public static void main(String[] args) {
         while (true) {
@@ -28,7 +26,8 @@ public class Program {
                 CheckBookCommand checkBookCommand = new CheckBookCommand();
                 checkBookCommand.checkBook(reader);
             } else if (i1 == 3) {
-                checkNumber();
+                CheckNumberCommand checkNumberCommand = new CheckNumberCommand();
+                checkNumberCommand.checkNumber();
             } else if (i1 == 4) {
                 printMovieList();
             } else if (i1 == 5) {
@@ -61,8 +60,8 @@ public class Program {
                     System.out.println("Enter your Password: ");
                     String password = reader.readLine();
                     if (validPassword(password)) {
-                        loggedIn = true;
-                        savedLibraryNumber = libraryNumber;
+                        CheckNumberCommand.loggedIn = true;
+                        CheckNumberCommand.savedLibraryNumber = libraryNumber;
                     }
                 } catch (Exception e) {
 
@@ -70,17 +69,6 @@ public class Program {
             }
         } catch (Exception e) {
 
-        }
-    }
-
-    private static void checkNumber() {
-        if (loggedIn()) {
-            System.out.println("\n");
-            System.out.println("Your library number is " + savedLibraryNumber);
-        } else {
-
-            System.out.println("\n");
-            System.out.println("Please talk to Librarian. Thank you.");
         }
     }
 
@@ -128,14 +116,10 @@ public class Program {
         return libraryNumber.matches("\\d{3}-\\d{4}");
     }
 
-    private static boolean loggedIn() {
-        return loggedIn;
-    }
-
 
     private static void clearLogin() {
-        loggedIn = false;
-        savedLibraryNumber = "";
+        CheckNumberCommand.loggedIn = false;
+        CheckNumberCommand.savedLibraryNumber = "";
     }
 
     private static String createMovie(String movieTitle, String movieDirector, String movieRanking) {
