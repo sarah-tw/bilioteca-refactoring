@@ -1,7 +1,7 @@
 package main;
 
-public class ErrorInputCommand {
-    static void errorInput() {
+public class ErrorInputCommand implements Command {
+    public void excute() {
         System.out.println("Enter a valid integer!!");
     }
 }

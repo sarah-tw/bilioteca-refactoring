@@ -1,9 +1,13 @@
 package main;
 
 import java.io.BufferedReader;
+import java.io.InputStreamReader;
 
-public class CheckBookCommand {
-    public void checkBook(BufferedReader reader) {
+public class CheckBookCommand implements Command{
+
+    public void excute() {
+        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+
         System.out.println(" Please enter the number of the book you wish to checkout: ");
         int i2 = 0;
         try {

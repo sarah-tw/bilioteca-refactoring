@@ -1,11 +1,11 @@
 package main;
 
-public class MovieListCommand {
+public class MovieListCommand implements Command{
     private static String createMovie(String movieTitle, String movieDirector, String movieRanking) {
         return movieTitle + " - Director: " + movieDirector + " Rating: " + movieRanking;
     }
 
-    public void printMovieList() {
+    public void excute() {
         System.out.println(createMovie("Rocky", "John G. Avildsen", "10"));
         System.out.println(createMovie("Rocky II", "John G. Avildsen", "9"));
         System.out.println(createMovie("Rocky III", "John G. Avildsen", "8"));

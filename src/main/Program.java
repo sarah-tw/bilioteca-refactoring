@@ -19,30 +19,30 @@ public class Program {
                 // Do you know what numbers are!!!
                 System.out.println("Enter a valid integer!!");
             }
-
+            Command command;
             if (i1 == 1) {
-                BookListCommand bookListCommand = new BookListCommand();
-                bookListCommand.printBookList();
+                command = new BookListCommand();
+                command.excute();
             } else if (i1 == 2) {
-                CheckBookCommand checkBookCommand = new CheckBookCommand();
-                checkBookCommand.checkBook(reader);
+                command = new CheckBookCommand();
+                command.excute();
             } else if (i1 == 3) {
-                CheckNumberCommand checkNumberCommand = new CheckNumberCommand();
-                checkNumberCommand.checkNumber();
+                command = new CheckNumberCommand();
+                command.excute();
             } else if (i1 == 4) {
-                MovieListCommand movieListCommand = new MovieListCommand();
-                movieListCommand.printMovieList();
+                command = new MovieListCommand();
+                command.excute();
             } else if (i1 == 5) {
-                LoginCommand loginCommand = new LoginCommand();
-                loginCommand.login(reader);
+                command = new LoginCommand();
+                command.excute();
 
             } else if (i1 == 9) {
-                QuitCommand quitCommand = new QuitCommand();
-                QuitCommand.quit();
+                command = new QuitCommand();
+                command.excute();
                 break;
             } else {
-                ErrorInputCommand errorInputCommand = new ErrorInputCommand();
-                ErrorInputCommand.errorInput();
+                command = new ErrorInputCommand();
+                command.excute();
             }
         }
     }

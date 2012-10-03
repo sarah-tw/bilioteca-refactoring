@@ -1,9 +1,11 @@
 package main;
 
 import java.io.BufferedReader;
+import java.io.InputStreamReader;
 
-public class LoginCommand {
-    public void login(BufferedReader reader) {
+public class LoginCommand implements Command {
+    public void excute() {
+        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         clearLogin();
         System.out.println("Enter your library number");
         try {

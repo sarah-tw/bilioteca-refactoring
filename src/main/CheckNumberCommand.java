@@ -1,6 +1,6 @@
 package main;
 
-public class CheckNumberCommand {
+public class CheckNumberCommand implements Command{
     static boolean loggedIn = false;
     static String savedLibraryNumber = "";
 
@@ -8,7 +8,7 @@ public class CheckNumberCommand {
         return loggedIn;
     }
 
-    public void checkNumber() {
+    public void excute() {
         if (loggedIn()) {
             System.out.println("\n");
             System.out.println("Your library number is " + savedLibraryNumber);

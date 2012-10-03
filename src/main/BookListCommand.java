@@ -1,7 +1,7 @@
 package main;
 
-public class BookListCommand {
-    public void printBookList() {
+public class BookListCommand implements Command{
+    public void excute() {
         System.out.println(" 1. Sweet Valley High vol. 4 by John Travolta ");
         System.out.println(" 2. eXtreme Programming Explained by Kent Beck ");
         System.out.println(" 3. How to Win Friends and Influence People by Dale Carnagie ");
