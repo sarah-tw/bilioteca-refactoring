@@ -23,28 +23,22 @@ public class Program {
             Command command;
             if (i1 == 1) {
                 command = new BookListCommand();
-                command.excute();
             } else if (i1 == 2) {
                 command = new CheckBookCommand();
-                command.excute();
             } else if (i1 == 3) {
                 command = new CheckNumberCommand();
-                command.excute();
             } else if (i1 == 4) {
                 command = new MovieListCommand();
-                command.excute();
             } else if (i1 == 5) {
                 command = new LoginCommand();
-                command.excute();
 
             } else if (i1 == 9) {
                 command = new QuitCommand();
                 isRun = false;
-                command.excute();
             } else {
                 command = new ErrorInputCommand();
-                command.excute();
             }
+            command.excute();
         }
     }
 
