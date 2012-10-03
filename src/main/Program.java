@@ -123,7 +123,7 @@ public class Program {
     }
 
     private static boolean validLibraryNumber(String libraryNumber) {
-        return libraryNumber.matches("\\d\\d\\d-\\d\\d\\d\\d");
+        return libraryNumber.matches("\\d{3}-\\d{4}");
     }
 
     private static boolean loggedIn() {
