@@ -25,63 +25,83 @@ public class Program {
             if (i1 == 1) {
                 printBookList();
             } else if (i1 == 2) {
-                System.out.println(" Please enter the number of the book you wish to checkout: ");
-                int i2 = 0;
-                try {
-                    i2 = Integer.parseInt(reader.readLine());
-                } catch (Exception e) {
-                    // Do you know what numbers are!!!
-                    System.out.println("Enter a valid integer!!");
-
-                }
-                switch (i2) {
-                    case 1:
-                    case 2:
-                    case 3:
-                    case 4:
-                        System.out.println(" Thank You! Enjoy the book.");
-                        break;
-                    default:
-                        System.out.println("Sorry we don't have that book yet.");
-                }
+                checkBook(reader);
             } else if (i1 == 3) {
-                if (loggedIn()) {
-                    System.out.println("\n");
-                    System.out.println("Your library number is " + savedLibraryNumber);
-                } else {
-
-                    System.out.println("\n");
-                    System.out.println("Please talk to Librarian. Thank you.");
-                }
+                checkNumber();
             } else if (i1 == 4) {
                 printMovieList();
             } else if (i1 == 5) {
                 clearLogin();
-                System.out.println("Enter your library number");
-                try {
-                    String libraryNumber = reader.readLine();
-                    if (validLibraryNumber(libraryNumber)) {
-                        try {
-                            System.out.println("Enter your Password: ");
-                            String password = reader.readLine();
-                            if (validPassword(password)) {
-                                loggedIn = true;
-                                savedLibraryNumber = libraryNumber;
-                            }
-                        } catch (Exception e) {
+                login(reader);
 
-                        }
+            } else if (i1 == 9) {
+                quit();
+                break;
+            } else {
+                errorInput();
+            }
+        }
+    }
+
+    private static void errorInput() {
+        System.out.println("Enter a valid integer!!");
+    }
+
+    private static void quit() {
+        System.out.println("Quitting...");
+    }
+
+    private static void login(BufferedReader reader) {
+        System.out.println("Enter your library number");
+        try {
+            String libraryNumber = reader.readLine();
+            if (validLibraryNumber(libraryNumber)) {
+                try {
+                    System.out.println("Enter your Password: ");
+                    String password = reader.readLine();
+                    if (validPassword(password)) {
+                        loggedIn = true;
+                        savedLibraryNumber = libraryNumber;
                     }
                 } catch (Exception e) {
 
                 }
-
-            } else if (i1 == 9) {
-                System.out.println("Quitting...");
-                break;
-            } else {
-                System.out.println("Enter a valid integer!!");
             }
+        } catch (Exception e) {
+
+        }
+    }
+
+    private static void checkNumber() {
+        if (loggedIn()) {
+            System.out.println("\n");
+            System.out.println("Your library number is " + savedLibraryNumber);
+        } else {
+
+            System.out.println("\n");
+            System.out.println("Please talk to Librarian. Thank you.");
+        }
+    }
+
+    private static void checkBook(BufferedReader reader) {
+        System.out.println(" Please enter the number of the book you wish to checkout: ");
+        int i2 = 0;
+        try {
+            i2 = Integer.parseInt(reader.readLine());
+        } catch (Exception e) {
+            // Do you know what numbers are!!!
+            System.out.println("Enter a valid integer!!");
+
+        }
+        switch (i2) {
+            case 1:
+            case 2:
+            case 3:
+            case 4:
+                System.out.println(" Thank You! Enjoy the book.");
+                break;
+            default:
+                System.out.println("Sorry we don't have that book yet.");
         }
     }
 
