@@ -20,25 +20,11 @@ public class Program {
                 // Do you know what numbers are!!!
                 System.out.println("Enter a valid integer!!");
             }
-            Command command;
-            if (i1 == 1) {
-                command = new BookListCommand();
-            } else if (i1 == 2) {
-                command = new CheckBookCommand();
-            } else if (i1 == 3) {
-                command = new CheckNumberCommand();
-            } else if (i1 == 4) {
-                command = new MovieListCommand();
-            } else if (i1 == 5) {
-                command = new LoginCommand();
-
-            } else if (i1 == 9) {
-                command = new QuitCommand();
+            MyCommand myCommand = MyCommand.parseCommand(i1);
+            if(myCommand == MyCommand.QUIT){
                 isRun = false;
-            } else {
-                command = new ErrorInputCommand();
             }
-            command.excute();
+            myCommand.getCommand().excute();
         }
     }
 
