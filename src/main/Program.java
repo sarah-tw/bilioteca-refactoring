@@ -21,7 +21,8 @@ public class Program {
             }
 
             if (i1 == 1) {
-                printBookList();
+                BookListCommand bookListCommand = new BookListCommand();
+                bookListCommand.printBookList();
             } else if (i1 == 2) {
                 CheckBookCommand checkBookCommand = new CheckBookCommand();
                 checkBookCommand.checkBook(reader);
@@ -29,7 +30,8 @@ public class Program {
                 CheckNumberCommand checkNumberCommand = new CheckNumberCommand();
                 checkNumberCommand.checkNumber();
             } else if (i1 == 4) {
-                printMovieList();
+                MovieListCommand movieListCommand = new MovieListCommand();
+                movieListCommand.printMovieList();
             } else if (i1 == 5) {
                 clearLogin();
                 login(reader);
@@ -72,26 +74,6 @@ public class Program {
         }
     }
 
-    private static void printMovieList() {
-        System.out.println(createMovie("Rocky", "John G. Avildsen", "10"));
-        System.out.println(createMovie("Rocky II", "John G. Avildsen", "9"));
-        System.out.println(createMovie("Rocky III", "John G. Avildsen", "8"));
-        System.out.println(createMovie("Rocky IV", "John G. Avildsen", "7"));
-        System.out.println(createMovie("Rocky V", "John G. Avildsen", "8"));
-        System.out.println(createMovie("Drainage", "Francisco Trindade", "N/A"));
-        System.out.println(createMovie("The Shawshank Redemption", "Frank Darabont", "10"));
-        System.out.println(createMovie("The Godfather", "Francis Ford Coppola", "7"));
-        System.out.println(createMovie("Inception", "Frank Darabont", "10"));
-        System.out.println(createMovie("Pulp Fiction", "Quentin Tarantino", "6"));
-    }
-
-    private static void printBookList() {
-        System.out.println(" 1. Sweet Valley High vol. 4 by John Travolta ");
-        System.out.println(" 2. eXtreme Programming Explained by Kent Beck ");
-        System.out.println(" 3. How to Win Friends and Influence People by Dale Carnagie ");
-        System.out.println(" 4. How to Cheat at TWU Assignements by Anonymous ");
-    }
-
     private static void printMenuList() {
         System.out.println("**********************************************************");
         System.out.println("* Welcome to The Bangalore Public Library System - Biblioteca *");
@@ -122,8 +104,5 @@ public class Program {
         CheckNumberCommand.savedLibraryNumber = "";
     }
 
-    private static String createMovie(String movieTitle, String movieDirector, String movieRanking) {
-        return movieTitle + " - Director: " + movieDirector + " Rating: " + movieRanking;
-    }
 }
 
