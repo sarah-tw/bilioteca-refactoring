@@ -6,7 +6,8 @@ import java.io.InputStreamReader;
 public class Program {
 
     public static void main(String[] args) {
-        while (true) {
+        boolean isRun = true;
+        while (isRun) {
             printMenuList();
 
             InputStreamReader inputStream = new InputStreamReader(System.in);
@@ -38,8 +39,8 @@ public class Program {
 
             } else if (i1 == 9) {
                 command = new QuitCommand();
+                isRun = false;
                 command.excute();
-                break;
             } else {
                 command = new ErrorInputCommand();
                 command.excute();
