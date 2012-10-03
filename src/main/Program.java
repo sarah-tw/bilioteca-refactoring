@@ -36,23 +36,12 @@ public class Program {
                 }
                 switch (i2) {
                     case 1:
-                        System.out.println("\n");
-                        System.out.println(" Thank You! Enjoy the book.");
-                        break;
                     case 2:
-                        System.out.println("\n");
-                        System.out.println(" Thank You! Enjoy the book.");
-                        break;
                     case 3:
-                        System.out.println("\n");
-                        System.out.println(" Thank You! Enjoy the book.");
-                        break;
                     case 4:
-                        System.out.println("\n");
                         System.out.println(" Thank You! Enjoy the book.");
                         break;
                     default:
-                        System.out.println("\n");
                         System.out.println("Sorry we don't have that book yet.");
                 }
             } else if (i1 == 3) {
