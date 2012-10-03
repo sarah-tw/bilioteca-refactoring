@@ -33,44 +33,17 @@ public class Program {
                 MovieListCommand movieListCommand = new MovieListCommand();
                 movieListCommand.printMovieList();
             } else if (i1 == 5) {
-                clearLogin();
-                login(reader);
+                LoginCommand loginCommand = new LoginCommand();
+                loginCommand.login(reader);
 
             } else if (i1 == 9) {
-                quit();
+                QuitCommand quitCommand = new QuitCommand();
+                QuitCommand.quit();
                 break;
             } else {
-                errorInput();
+                ErrorInputCommand errorInputCommand = new ErrorInputCommand();
+                ErrorInputCommand.errorInput();
             }
-        }
-    }
-
-    private static void errorInput() {
-        System.out.println("Enter a valid integer!!");
-    }
-
-    private static void quit() {
-        System.out.println("Quitting...");
-    }
-
-    private static void login(BufferedReader reader) {
-        System.out.println("Enter your library number");
-        try {
-            String libraryNumber = reader.readLine();
-            if (validLibraryNumber(libraryNumber)) {
-                try {
-                    System.out.println("Enter your Password: ");
-                    String password = reader.readLine();
-                    if (validPassword(password)) {
-                        CheckNumberCommand.loggedIn = true;
-                        CheckNumberCommand.savedLibraryNumber = libraryNumber;
-                    }
-                } catch (Exception e) {
-
-                }
-            }
-        } catch (Exception e) {
-
         }
     }
 
@@ -90,19 +63,6 @@ public class Program {
         System.out.println("Your Selection: ");
     }
 
-    private static boolean validPassword(String password) {
-        return "bhaisahab".equals(password);
-    }
-
-    private static boolean validLibraryNumber(String libraryNumber) {
-        return libraryNumber.matches("\\d{3}-\\d{4}");
-    }
-
-
-    private static void clearLogin() {
-        CheckNumberCommand.loggedIn = false;
-        CheckNumberCommand.savedLibraryNumber = "";
-    }
 
 }
 
